@@ -1,3 +1,4 @@
+<?php
 /**
  * Filter and display News Custom Postype by Searh or Year
  * 
@@ -110,6 +111,7 @@ function filter_news_category() {
   <?php } else {
 	  $response = 'empty';
 	}
+	?>
   
 	echo $response;
 	exit;
