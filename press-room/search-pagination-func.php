@@ -72,46 +72,46 @@ function filter_news_category() {
 		$response .= get_template_part( '/template-parts/news-list-item' );
 	  endwhile;
 	  ?>
-  <div class="row an-pagination-row">
-      <?php if ($numberPages > 1):  ?>
-      <ul class="announce_news__pagination" data-current-page="<?php echo $page ? $page : 1; ?>">
-          <?php if($page > 1) { ?>
-          <li><span class="an-pagination" data-page="<?php echo ($page - 1);?>">
-                  << Prev</span>
-          </li>
-          <?php } ?>
-          <?php
-          if($numberPages > 4 && $page <= 2) {
-            for ($i = 1; $i < 4; $i++) {
-              $active_class = $i === 1 ? ' active' : ''; 
-              echo '<li><span class="an-pagination" data-page="' . $i . '">'
-                . $i . '</span></li>';
-            }
-            echo '<li><span>...</span></li>';
-            echo '<li><span class="an-pagination" data-page="' . $numberPages. '">'
-                . $numberPages . '</span></li>';
-          } 
-          else {
-            for ($i = 1; $i <= $numberPages; $i++) {
-              $active_class = $i === $page ? ' active' : 'no'; ?>
-          <li><span class="an-pagination <?php echo $active_class; ?>"
-                  data-page="<?php echo $i; ?>"><?php echo $i; ?></span></li>
-          <?php
-            }
-          }
-          if($page < $numberPages) {
-          ?>
-  
-          <li><span class="an-pagination" data-page="<?php echo ($page + 1);?>">Next >></span></li>
-          <?php } ?>
-      </ul>
-      <?php endif; ?>
-  </div>
+	  <div class="row an-pagination-row">
+	      <?php if ($numberPages > 1):  ?>
+	      <ul class="announce_news__pagination" data-current-page="<?php echo $page ? $page : 1; ?>">
+	          <?php if($page > 1) { ?>
+	          <li><span class="an-pagination" data-page="<?php echo ($page - 1);?>">
+	                  << Prev</span>
+	          </li>
+	          <?php } ?>
+	          <?php
+	          if($numberPages > 4 && $page <= 2) {
+	            for ($i = 1; $i < 4; $i++) {
+	              $active_class = $i === 1 ? ' active' : ''; 
+	              echo '<li><span class="an-pagination" data-page="' . $i . '">'
+	                . $i . '</span></li>';
+	            }
+	            echo '<li><span>...</span></li>';
+	            echo '<li><span class="an-pagination" data-page="' . $numberPages. '">'
+	                . $numberPages . '</span></li>';
+	          } 
+	          else {
+	            for ($i = 1; $i <= $numberPages; $i++) {
+	              $active_class = $i === $page ? ' active' : 'no'; ?>
+	          <li><span class="an-pagination <?php echo $active_class; ?>"
+	                  data-page="<?php echo $i; ?>"><?php echo $i; ?></span></li>
+	          <?php
+	            }
+	          }
+	          if($page < $numberPages) {
+	          ?>
+	  
+	          <li><span class="an-pagination" data-page="<?php echo ($page + 1);?>">Next >></span></li>
+	          <?php } ?>
+	      </ul>
+	      <?php endif; ?>
+	  </div>
   
   <?php } else {
-	  $response = 'empty';
-	}
-	?>
+  	$response = 'empty';
+  }
+?>
   
 	echo $response;
 	exit;
