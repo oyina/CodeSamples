@@ -3,7 +3,6 @@
  * Filter and display News Custom Postype by Searh or Year
  * 
  *
- * @return mixed
  */
 function filter_news_category() {
 	$dateYear = $_POST['year'];
